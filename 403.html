@@ -10,6 +10,13 @@
         body {
             font-family: 'Trebuchet MS', sans-serif;
         }
+        #title {
+            color: #24272e;
+        }
+        #description {
+            color: #2f3030;
+            font-style: italic;
+        }
         #video {
             position: fixed;
             z-index: -1;
@@ -56,8 +63,8 @@
         Enable Sound
     </button>
     <div id="message">
-        <h1>403 | Forbidden</h1>
-        <strong>Ah Ah Ah, You didn't say the magic word.</strong>
+        <h1 id="title">403 | Forbidden</h1>
+        <strong id="description">Ah Ah Ah, You didn't say the magic word.</strong>
     </div>
     <video id="video" onloadeddata="this.play();" playsinline loop muted>
         <source src="403_video.mp4" type="video/mp4">
