@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Error 403 - Forbidden</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+        #video {
+            position: fixed;
+            z-index: -1;
+            width: 100%;
+            height: auto;
+            left: 0%;
+            top: 50%;
+            transform: translateY(-50%);
+            max-height: 100vh;
+            border: 5px solid white;
+        }
+        
+        #message {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            padding-top: 10%;
+        }
+        @media only screen and (min-width: 920px) {
+            #message {
+                position: fixed;
+                left: 0;
+                top: 50%;
+                justify-content: flex-start;
+                text-align: left;
+                padding-left: 3rem;
+                padding-top: 0%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @media only screen and (min-width: 1620px) {
+            #message {
+                padding-left: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="muteButton" onclick="toggleMute()">
+        Enable Sound
+    </button>
+    <div id="message">
+        <h1>403 | Forbidden</h1>
+        <strong>Ah Ah Ah, You didn't say the magic word.</strong>
+    </div>
+    <video id="video" onloadeddata="this.play();" playsinline loop muted>
+        <source src="403_video.mp4" type="video/mp4">
+        <source src="403_video.ogg" type="video/ogg">
+        Ah ah ah, you didn't say the magic word.
+    </video>
+
+    <script>
+        const video = document.getElementById('video');
+        const muteButton = document.getElementById('muteButton');
+        
+        video.play();
+
+        function toggleMute() {
+            const action = !video.muted;
+            video.muted = action;
+
+            if (action) {
+                muteButton.innerHTML = 'Enable Sound';
+            }
+            else {
+                muteButton.innerHTML = 'Mute';
+            }
+        }
+
+        window.addEventListener('load', (event) => {
+            muteButton.click;
+        });
+    </script>
+</body>
+</html>
