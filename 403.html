@@ -11,10 +11,10 @@
             font-family: 'Trebuchet MS', sans-serif;
         }
         #title {
-            color: #24272e;
+            color: rgb(0, 0, 0);
         }
         #description {
-            color: #2f3030;
+            color: rgb(55, 55, 55);
             font-style: italic;
         }
         #video {
@@ -28,7 +28,11 @@
             max-height: 100vh;
             border: 5px solid white;
         }
-        
+        span {
+            border-radius: 0.3rem;
+            padding: 0.3rem 0.3rem;
+            background-color: rgb(255, 198, 65);
+        }
         #message {
             position: relative;
             display: flex;
@@ -37,6 +41,15 @@
             width: 100%;
             text-align: center;
             padding-top: 10%;
+        }
+        @media only screen and (min-width: 500px) {
+            #message {
+                position: fixed;
+                left: 0;
+                bottom: 10%;
+                padding-top: 0%;
+                transform: translateY(-50%);
+            }
         }
         @media only screen and (min-width: 920px) {
             #message {
@@ -63,8 +76,12 @@
         Enable Sound
     </button>
     <div id="message">
-        <h1 id="title">403 | Forbidden</h1>
-        <strong id="description">Ah Ah Ah, You didn't say the magic word.</strong>
+        <h1 id="title"><span>
+            403 | Forbidden
+        </span></h1>
+        <strong id="description"><span>
+            Ah Ah Ah, You didn't say the magic word.
+        </span></strong>
     </div>
     <video id="video" onloadeddata="this.play();" playsinline loop muted>
         <source src="403_video.mp4" type="video/mp4">
